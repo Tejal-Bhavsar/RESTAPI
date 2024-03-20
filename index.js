@@ -18,10 +18,20 @@ app.get('/api/users', (req, res) => {
 })
 
 // dynamic path params
-app.get('/api/users/:id', (req, res) => {
+// grouping of routes
+app.route('/api/users/:id')
+.get((req, res) => {
     const id = Number(req.params.id)
     const user = users.find((user) => user.id === id)
     return res.json(user)
+})
+.patch((req, res) => {
+    // edit user wid perticular id
+    return res.json({staus: 'pending'})
+})
+.delete((req, res) => {
+    // delte user wid perticular id
+    return res.json({staus: 'pending'})
 })
 
 app.post('/api/users/', (req, res) => {
@@ -29,15 +39,7 @@ app.post('/api/users/', (req, res) => {
     return res.json({staus: 'pending'})
 })
 
-app.patch('/api/users/:id', (req, res) => {
-    // edit user wid perticular id
-    return res.json({staus: 'pending'})
-})
 
-app.delete('/api/users/:id', (req, res) => {
-    // delte user wid perticular id
-    return res.json({staus: 'pending'})
-})
 
 app.listen(PORT, () => {
     console.log('I am a server at port 8000')
