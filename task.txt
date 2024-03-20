@@ -1,0 +1,15 @@
+create a REST API -JSON
+
+its good practise to make a hybrid server that can be used by both web and mobile, alexa etc
+1. Get/users  = web - returns html (SSR)
+2 Get/api/users = mobile, alexa etc - returns json()
+Get/users = list all users ()
+
+
+Get/users/1 = user wid ID 1
+
+Post/user = create new user
+
+PATCHT/user/1 = edit user wid ID 1
+
+Delete/user/1 = delete user wid id 1
